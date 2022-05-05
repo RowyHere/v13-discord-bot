@@ -1,14 +1,14 @@
 { 
 
-    "prefix": "+",
+    "prefix": "enter a prefix",
 
-    "token": "OTcwNzMyNDc1MTgzNjc3NTQw.YnAPEQ.4ByeAe_j7rSHumTeZiIb1mk4kUs",
+    "token": "enter a bot application token",
 
-    "guildID": "969971638919635004",
-    "botID": "970732475183677540",
+    "guildID": "enter a guild id",
+    "botID": "enter a bot id",
 
-    "activities": "Waxy ❤",
+    "activities": "Rowy 💙",
 
-    "developers": ["945003506912342037"]
+    "developers": ["owner id","owner id2 etc.."]
 
 }
