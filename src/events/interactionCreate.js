@@ -18,7 +18,7 @@ module.exports = async (interaction,client) => {
 
     if(command.developerOnly === true) { 
 
-        if(config.developers.includes(interaction.user.id)) {
+        if(!config.developers.includes(interaction.user.id)) {
 
         return interaction.reply({ content: "Bu komutu sadece geliştiricim kullanabilir.", ephemeral: true })
 
