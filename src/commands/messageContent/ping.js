@@ -43,7 +43,7 @@ module.exports = {
 
             collector.on("collect", async (interaction) => {
 
-                if(interaction.user.id !== message.author.id) { return msg.reply({ ephemeral: true, content: "Bu butonu sadece <@" + message.author.id + "> kullanabilir." }) }
+                if(interaction.user.id !== message.author.id) { return interaction.reply({ ephemeral: true, content: "Bu butonu sadece <@" + message.author.id + "> kullanabilir." }) }
 
                 if(interaction.customId === "veriguncelleme") {
 
