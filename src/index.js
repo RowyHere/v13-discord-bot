@@ -53,24 +53,9 @@ client.on("ready", async () => {
         const command = require(`../src/commands/interactionContent/${file}`);
         commands.push(command.data.toJSON());
     }
-
-    client.guilds.cache.forEach(async (guild) => {
-
-        (async () => {
-            try {
-                await rest.put(
-                    Routes.applicationGuildCommands(config.botID, guild.id),
-                    { body: commands },
-                );
-
-                //    console.log("[" + chalk.magenta("+") + "] Successfully reloaded " + chalk.green("application commands"));
-            } catch (error) {
-                console.error(error);
-                return
-            }
-        })();
-    })
-
+    
+    client.application.commands?.set(commands)
+    
 })
 
 client.on("guildCreate", async (guild) => {
@@ -85,10 +70,8 @@ client.on("guildCreate", async (guild) => {
 
     (async () => {
         try {
-            await rest.put(
-                Routes.applicationGuildCommands(config.botID, guild.id),
-                { body: commands },
-            );
+            
+               client.application.commands?.set(commands)
 
             console.log("[" + chalk.magenta("+") + "] Successfully loaded " + chalk.green("commands") + " on the " + chalk.cyan(guild.name) + " server.");
             client.users.cache.get(guild.ownerId).send("Thank you for adding me to your server\n**Support Server**: https://discord.gg/dMTw8s8xqg")
